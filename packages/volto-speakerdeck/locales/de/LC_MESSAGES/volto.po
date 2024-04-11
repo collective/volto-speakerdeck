@@ -10,3 +10,28 @@ msgstr ""
 "Content-Type: \n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. Default: "Alignment"
+#: components/Blocks/Speakerdeck/schema
+msgid "Alignment"
+msgstr ""
+
+#. Default: "Size"
+#: components/Blocks/Speakerdeck/schema
+msgid "Size"
+msgstr ""
+
+#. Default: "Speakerdeck"
+#: components/Blocks/Speakerdeck/schema
+msgid "Speakerdeck"
+msgstr ""
+
+#. Default: "Style"
+#: components/Blocks/Speakerdeck/schema
+msgid "Style"
+msgstr ""
+
+#. Default: "URL"
+#: components/Blocks/Speakerdeck/schema
+msgid "URL"
+msgstr ""
