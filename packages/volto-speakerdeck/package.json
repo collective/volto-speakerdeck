@@ -1,6 +1,6 @@
 {
   "name": "@plone-collective/volto-speakerdeck",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Add decks from Speakerdeck in your Plone site.",
   "main": "src/index.js",
   "license": "MIT",
