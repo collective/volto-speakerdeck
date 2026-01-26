@@ -1,8 +1,10 @@
 import React from 'react';
-import SpeakerdeckView from './DefaultView';
+import type { Meta, StoryObj, Decorator } from '@storybook/react';
+import SpeakerdeckView from '@plone-collective/volto-speakerdeck/components/Blocks/Speakerdeck/DefaultView';
 import Wrapper from '@plone/volto/storybook';
+import type { SpeakerDeckOEmbedResponse } from '@plone-collective/volto-speakerdeck/helpers/data';
 
-const speakerdeckOembed = {
+const speakerdeckOembed: SpeakerDeckOEmbedResponse = {
   author_name: 'Érico Andrei',
   author_url: 'https://speakerdeck.com/ericof',
   height: 399,
@@ -16,7 +18,16 @@ const speakerdeckOembed = {
   width: 710,
 };
 
-const withWrapper = (Story, { args }) => {
+interface SpeakerdeckViewProps {
+  href?: string;
+  styles: {
+    align?: 'center' | 'left' | 'right';
+    size?: 's' | 'm' | 'l';
+  };
+  speakerdeckOembed?: SpeakerDeckOEmbedResponse;
+}
+
+const withWrapper: Decorator = (Story, { args }) => {
   return (
     <Wrapper anonymous>
       <div style={{ width: '1000px' }}>
@@ -26,7 +37,7 @@ const withWrapper = (Story, { args }) => {
   );
 };
 
-export default {
+const meta: Meta<SpeakerdeckViewProps> = {
   title: 'Public/Blocks/SpeakerdeckBlock',
   component: SpeakerdeckView,
   decorators: [withWrapper],
@@ -48,42 +59,61 @@ export default {
   },
   args: {
     href: 'https://speakerdeck.com/ericof/nem-tudo-e-codigo',
-    align: 'center',
-    size: 'l',
+    styles: {
+      align: 'center',
+      size: 'l',
+    },
     speakerdeckOembed: speakerdeckOembed,
   },
 };
 
-export const Small = {
+export default meta;
+
+type Story = StoryObj<SpeakerdeckViewProps>;
+
+export const Small: Story = {
   args: {
-    size: 's',
+    styles: {
+      size: 's',
+    },
   },
 };
-export const Medium = {
+export const Medium: Story = {
   args: {
-    size: 'm',
+    styles: {
+      size: 'm',
+    },
   },
 };
-export const Large = {
+export const Large: Story = {
   args: {
-    size: 'l',
+    styles: {
+      size: 'l',
+    },
   },
 };
-export const AlignLeft = {
+export const AlignLeft: Story = {
   args: {
-    align: 'left',
-    size: 'l',
+    styles: {
+      align: 'left',
+      size: 'l',
+    },
   },
 };
-export const AlignCenter = {
+export const AlignCenter: Story = {
   args: {
-    align: 'left',
-    size: 'l',
+    styles: {
+      align: 'center',
+      size: 'l',
+    },
   },
 };
-export const AlignRight = {
+
+export const AlignRight: Story = {
   args: {
-    align: 'right',
-    size: 'l',
+    styles: {
+      align: 'right',
+      size: 'l',
+    },
   },
 };

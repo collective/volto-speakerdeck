@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { isValidSpeakerdeckUrl } from './validator';
 
 describe('Validator', () => {
@@ -12,7 +13,7 @@ describe('Validator', () => {
         isValidSpeakerdeckUrl('https://speakerdeck.com/ericof/other'),
       ).toBe(true);
     });
-    it('denies ivalid urls', () => {
+    it('denies invalid urls', () => {
       expect(isValidSpeakerdeckUrl('https://speakerdeck.com/ericof')).toBe(
         false,
       );
