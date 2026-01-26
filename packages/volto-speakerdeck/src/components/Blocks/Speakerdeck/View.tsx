@@ -1,6 +1,6 @@
 import React from 'react';
-import { withBlockExtensions } from '@plone/volto/helpers';
-import SpeakerdeckView from './DefaultView';
+import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
+import SpeakerdeckView from '@plone-collective/volto-speakerdeck/components/Blocks/Speakerdeck/DefaultView';
 
 const SpeakerdeckBlockView = (props) => {
   const { data, isEditMode, className } = props;

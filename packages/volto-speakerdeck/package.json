@@ -1,8 +1,8 @@
 {
   "name": "@plone-collective/volto-speakerdeck",
   "version": "1.0.0-alpha.2",
-  "description": "Add decks from Speakerdeck in your Plone site.",
-  "main": "src/index.js",
+  "description": "Add decks from Speakerdeck in your Plone site",
+  "main": "src/index.ts",
   "license": "MIT",
   "keywords": [
     "volto-addon",
@@ -14,7 +14,7 @@
   "homepage": "https://github.com/collective/volto-speakerdeck#readme",
   "repository": {
     "type": "git",
-    "url": "git@github.com:collective/volto-speakerdeck.git"
+    "url": "git@github.com:collective/volto-speakerdeck"
   },
   "publishConfig": {
     "access": "public"
@@ -26,16 +26,31 @@
     "release-major-alpha": "release-it major --preRelease=alpha",
     "release-alpha": "release-it --preRelease=alpha"
   },
+  "addons": [
+    "@eeacms/volto-corsproxy"
+  ],
+  "theme": "",
   "dependencies": {
-    "@plone/components": "1.7.0"
+    "@eeacms/volto-corsproxy": "4.0.0"
   },
   "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-intl": "3.8.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intl": "3.12.1",
+    "react-redux": "8.1.2"
   },
   "devDependencies": {
-    "@plone/scripts": "^3.6.1",
-    "release-it": "^17.1.1"
+    "@plone/components": "workspace:*",
+    "@plone/registry": "workspace:*",
+    "@plone/scripts": "workspace:*",
+    "@plone/types": "workspace:*",
+    "@testing-library/react": "^16.2.0",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "react-intl": "3.12.1",
+    "react-redux": "8.1.2",
+    "release-it": "^19.0.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.1.2"
   }
 }

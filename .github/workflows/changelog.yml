@@ -6,14 +6,14 @@ on:
       - main
 
 env:
-  NODE_VERSION: 20.x
+  NODE_VERSION: 22
   ADDON_NAME: volto-speakerdeck
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           # Fetch all history
           fetch-depth: '0'
@@ -26,13 +26,8 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 8
-          # We don't want to install until later,
-          # when the cache and Cypress are in place
-          run_install: false
+      - name: Enable corepack
+        run: npm i -g corepack@latest && corepack enable
 
       - name: Get pnpm store directory
         shell: bash

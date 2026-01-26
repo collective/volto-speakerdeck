@@ -1,10 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import iconSVG from '../../../icons/speakerdeck.svg';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import iconSVG from '@plone-collective/volto-speakerdeck/icons/speakerdeck.svg';
+import type { SpeakerDeckOEmbedResponse } from '../../../types/oembed';
 import './Style.less';
 
-const SpeakerdeckWrapper = ({ ratio, html, size }) => {
+interface SpeakerdeckWrapperProps {
+  ratio?: number;
+  html?: string;
+  size?: string;
+}
+
+const SpeakerdeckWrapper: React.FC<SpeakerdeckWrapperProps> = ({
+  ratio,
+  html,
+  size,
+}) => {
   const style = { aspectRatio: ratio };
   return (
     <div
@@ -15,8 +25,20 @@ const SpeakerdeckWrapper = ({ ratio, html, size }) => {
   );
 };
 
-const SpeakerdeckView = (props) => {
-  const { isEditMode, speakerdeckOembed, align, size, className } = props;
+interface SpeakerdeckViewProps {
+  isEditMode?: boolean;
+  speakerdeckOembed?: SpeakerDeckOEmbedResponse;
+  styles?: {
+    align?: string;
+    size?: string;
+  };
+  className?: string;
+}
+
+const SpeakerdeckView: React.FC<SpeakerdeckViewProps> = (props) => {
+  const { isEditMode, speakerdeckOembed, styles, className } = props;
+  const { align = 'center', size = 'm' } = styles || {};
+
   return speakerdeckOembed ? (
     <div className={`block speakerdeck ${className} align-${align}`}>
       {isEditMode && <div className={'overlay'}> </div>}
@@ -36,22 +58,4 @@ const SpeakerdeckView = (props) => {
   );
 };
 
-/**
- * Property types.
- * @property {Object} propTypes Property types.
- * @static
- */
-SpeakerdeckView.propTypes = {
-  speakerdeckOembed: PropTypes.object,
-};
-
-/**
- * Default properties.
- * @property {Object} defaultProps Default properties.
- * @static
- */
-SpeakerdeckView.defaultProps = {
-  align: 'center',
-  size: 'l',
-};
 export default SpeakerdeckView;

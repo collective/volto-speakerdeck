@@ -1,0 +1,1 @@
+No need for an external CORS Proxy, as we use `@eeacms/volto-corsproxy`. @ericof
