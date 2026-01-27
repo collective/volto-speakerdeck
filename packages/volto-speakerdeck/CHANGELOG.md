@@ -7,3 +7,9 @@
 -->
 
 <!-- towncrier release notes start -->
+
+## 1.0.0-alpha.2 (2024-04-11)
+
+### Feature
+
+- Implement a Speakerdeck block [@ericof] [#1](https://github.com/collective/volto-speakerdeck/issue/1)

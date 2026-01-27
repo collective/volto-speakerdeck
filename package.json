@@ -1,6 +1,6 @@
 {
   "name": "@plone-collective/volto-speakerdeck-dev",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.3",
   "description": "Add decks from Speakerdeck in your Plone site",
   "author": "Érico Andrei",
   "homepage": "https://github.com/collective/volto-speakerdeck",
