@@ -1,0 +1,192 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Public/Blocks/SpeakerdeckBlock/Documentation" />
+
+# 📊 Speaker Deck Block for Volto
+
+The **@plone-collective/volto-speakerdeck** add-on allows you to embed Speaker Deck presentations into Plone pages in a simple and elegant way.
+
+## 🎯 Overview
+
+This block was developed to facilitate the integration of presentations hosted on [Speaker Deck](https://speakerdeck.com/) into Plone sites. It uses the Speaker Deck oEmbed API to automatically fetch metadata and embedding code.
+
+## 🎥 See it in Action
+
+<div style={{ textAlign: 'center', margin: '20px 0' }}>
+  <video
+    width="100%"
+    controls
+    style={{
+      maxWidth: '800px',
+      margin: '0 auto',
+      display: 'block',
+      borderRadius: '8px',
+    }}
+  >
+    <source src="/SpeakerDeck.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <p style={{ marginTop: '10px', fontStyle: 'italic', color: '#666' }}>
+    Video demonstrating how to add and configure the Speaker Deck block
+  </p>
+</div>
+
+## ✨ Key Features
+
+### 1. **Automatic Integration**
+
+Simply paste the presentation URL and the block automatically fetches all necessary information through the Speaker Deck oEmbed API.
+
+### 2. **Flexible Sizes**
+
+Three size options available:
+
+- **Small (s)**: Ideal for sidebars or when you have multiple presentations
+- **Medium (m)**: Default size, balanced for most use cases
+- **Large (l)**: To highlight important presentations
+
+### 3. **Customizable Alignment**
+
+- **Left**: For layouts with text on the right
+- **Center**: Balanced visual (default)
+- **Right**: For special layouts or visual contrast
+
+### 4. **Smart Edit Mode**
+
+In edit mode, a transparent overlay is added over the iframe to facilitate block selection and manipulation without interference from embedded content.
+
+### 5. **Responsive by Default**
+
+Uses CSS aspect-ratio to ensure presentations display correctly across all screen sizes.
+
+## 🚀 How to Use
+
+### Step 1: Add the Block
+
+1. In the Plone editor, click "Add Block"
+2. Select "Speaker Deck" from the list of available blocks
+
+### Step 2: Configure the Block
+
+1. Paste the Speaker Deck presentation URL in the URL field
+2. Wait for the oEmbed data to load
+3. The presentation will be displayed automatically
+
+### Step 3: Customize (Optional)
+
+1. Use the sidebar to adjust the size
+2. Choose the desired alignment
+3. Save the page
+
+## 📋 Valid URL Examples
+
+```
+https://speakerdeck.com/username/presentation-slug
+https://speakerdeck.com/ericof/nem-tudo-e-codigo
+https://speakerdeck.com/plone/building-modern-cms
+```
+
+## 🎨 Common Use Cases
+
+### Resource Page
+
+Use large and centered blocks to highlight important presentations on resource or documentation pages.
+
+### Presentation Gallery
+
+Combine multiple small or medium blocks to create a gallery of related presentations.
+
+### Sidebar Content
+
+Use small blocks aligned left or right to complement main text.
+
+### Blog Posts
+
+Embed relevant presentations in blog posts using medium-sized centered blocks.
+
+## 🔧 Advanced Customization
+
+### Modifying Styles
+
+Styles can be customized through the `Style.less` file:
+
+```less
+.block.speakerdeck {
+  // Custom styles
+
+  .speakerdeck-wrapper {
+    // Iframe container styles
+
+    &.block-s {
+      max-width: 500px; // Small size
+    }
+
+    &.block-m {
+      max-width: 800px; // Medium size
+    }
+
+    &.block-l {
+      max-width: 100%; // Large size
+    }
+  }
+}
+```
+
+### Adding New Sizes
+
+1. Add the class in `Style.less`
+2. Update the schema in `schema.ts`
+3. Add the type in `DefaultView.tsx`
+
+## 🧪 Testing the Block
+
+### Visual Tests with Storybook
+
+```bash
+pnpm storybook
+```
+
+Navigate to `Public/Blocks/SpeakerdeckBlock` to view all examples.
+
+### E2E Tests with Cypress
+
+```bash
+pnpm cypress:run
+```
+
+### Local Development
+
+```bash
+pnpm start
+```
+
+## 🐛 Troubleshooting
+
+### Presentation doesn't load
+
+- Verify the URL is valid and public
+- Confirm the presentation exists on Speaker Deck
+- Check the connection to the oEmbed API
+
+### Incorrect size
+
+- Check size settings in the sidebar
+- Confirm CSS styles have loaded
+- Clear browser cache
+
+### Iframe not responsive
+
+- Verify the `aspect-ratio` property is being applied
+- Confirm the block CSS is loaded
+
+## 📄 License
+
+The project is licensed under the MIT license.
+
+## Credits and acknowledgements 🙏
+
+Generated using [Cookieplone (0.9.10)](https://github.com/plone/cookieplone) and [cookieplone-templates (dd13073)](https://github.com/plone/cookieplone-templates/commit/dd13073d34447056d6992461d8da29447d62c029) on 2026-01-20 13:59:44.590638. A special thanks to all contributors and supporters!
+
+---
+
+**Questions?** Open an issue on the [GitHub repository](https://github.com/collective/volto-speakerdeck/issues).
