@@ -10,7 +10,7 @@ Add decks from Speakerdeck in your Plone site
 
 **🎥 [Watch Demo Video](https://raw.githubusercontent.com/collective/volto-speakerdeck/refs/heads/main/docs/_static/SpeakerDeck.mp4)**
 
-![Demo](https://raw.githubusercontent.com/collective/volto-speakerdeck/refs/heads/main/docs/docs/_static/SpeakerDeck.gif)
+![Demo](https://raw.githubusercontent.com/collective/volto-speakerdeck/refs/heads/main/docs/_static/SpeakerDeck.gif)
 
 - **Embed Speakerdeck presentations**: Add a Volto block that allows you to embed presentations hosted on [Speakerdeck](https://speakerdeck.com) directly into your Plone site pages.
 - **Easy integration**: Simply paste the Speakerdeck URL and the block handles the embedding automatically.
