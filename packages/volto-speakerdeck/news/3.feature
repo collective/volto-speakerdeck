@@ -1,1 +1,0 @@
-Update documentation with a video showcasing the add-on usage. @humanaice
